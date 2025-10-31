@@ -62,7 +62,7 @@ module.exports = async (req, res) => {
         // Connect to database
         const pool = await sql.connect(config);
 
-        // Insert data
+        // Insert data with schema name
         await pool.request()
             .input('fullName', sql.NVarChar, fullName)
             .input('email', sql.NVarChar, email)
@@ -75,7 +75,7 @@ module.exports = async (req, res) => {
             .input('willingToParticipate', sql.NVarChar, willingToParticipate)
             .input('submittedAt', sql.DateTime2, submitted_at || new Date().toISOString())
             .query(`
-                INSERT INTO governance_research 
+                INSERT INTO NepsixResearch.governance_research 
                 (full_name, email, country, age_range, occupation, 
                  primary_governance_problem, problem_impact, specific_example, 
                  willing_to_participate, submitted_at)
@@ -90,7 +90,7 @@ module.exports = async (req, res) => {
 
         return res.status(201).json({ 
             success: true, 
-            message: 'Thanks for being a part of this research. Your response has been recorded.' 
+            message: 'Research data submitted successfully' 
         });
 
     } catch (error) {
