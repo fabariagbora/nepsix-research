@@ -1,0 +1,9 @@
+{
+  "name": "nepsix-api",
+  "version": "1.0.0",
+  "description": "Nepsix Research API",
+  "main": "submit-research.js",
+  "dependencies": {
+    "mssql": "^10.0.1"
+  }
+}
