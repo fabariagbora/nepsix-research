@@ -28,3 +28,5 @@ CREATE INDEX idx_problem ON NepsixResearch.governance_research(primary_governanc
 CREATE INDEX idx_occupation ON NepsixResearch.governance_research(occupation);
 CREATE INDEX idx_submitted_at ON NepsixResearch.governance_research(submitted_at);
 GO
+
+SELECT * FROM NepsixResearch.governance_research;
